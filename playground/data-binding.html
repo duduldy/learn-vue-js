@@ -11,10 +11,15 @@
       <!-- v-bind id 등을 변수로 하고 싶을 때 -->
       <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
       <p>{{ doubleNum }}</p>
+
       <!-- v-if는 dom에서 태그가 아예 사라지고 v-show는 false여도 보이지 않을뿐 태그는 살아 있다. -->
       <div v-if="loading">Loading...</div>
       <div v-else>test user has neen logged in</div>
       <div v-show="loading">Loading...</div>
+
+      <!-- TODO: 인풋 박스를 만들고 입력된 값을 p 태그에 출력해보세요 -->
+      <input type="text" v-model="message" />
+      <p>{{ message }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -27,6 +32,7 @@
           uuid: 'abc1234',
           name: 'text-blue',
           loading: true,
+          message: '',
         },
         computed: {
           doubleNum: function () {
